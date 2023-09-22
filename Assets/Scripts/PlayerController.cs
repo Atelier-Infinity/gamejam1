@@ -23,9 +23,10 @@ public class PlayerController : MonoBehaviour, PlayerInput.IPlayerActions
     public void OnMove(InputAction.CallbackContext context)
     {
         _direction = context.ReadValue<Vector2>();
-        Debug.Log(_direction);
+        // Debug.Log(_direction);
     }
     
+    /////////////////////////////////////////
     public void OnEnable()
     {
         if (_controls == null)
@@ -40,5 +41,4 @@ public class PlayerController : MonoBehaviour, PlayerInput.IPlayerActions
     {
         _controls.Player.Disable();
     }
-
 }
