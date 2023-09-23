@@ -13,7 +13,7 @@ public class LimbAttachment : MonoBehaviour
     [Description("Time to travel from positon to being attached in seconds")]
     public float totalAttachmentTime = 1;
 
-    public float accelerationRate = 2;
+    public AnimationCurve accelerationRate = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
     public void Attach(AttachmentPoint attachmentTarget)
     {
@@ -41,10 +41,7 @@ public class LimbAttachment : MonoBehaviour
     {
         if (!_attachmentTarget || _attachmentTarget.IsAttached) return;
 
-        var progress = math.pow(
-            (Time.time - _attachmentStartTime) / totalAttachmentTime,
-            accelerationRate
-        );
+        var progress = accelerationRate.Evaluate((Time.time - _attachmentStartTime) / totalAttachmentTime);
 
         if (totalAttachmentTime <= (Time.time - _attachmentStartTime))
         {

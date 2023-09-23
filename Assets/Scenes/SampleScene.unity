@@ -456,6 +456,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 863178509595466635, guid: 06d61907bf5104f4d8532f82861a77f2,
+        type: 3}
+      propertyPath: curve.m_PostInfinity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 863178509595466635, guid: 06d61907bf5104f4d8532f82861a77f2,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 863178509595466635, guid: 06d61907bf5104f4d8532f82861a77f2,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].time
+      value: 0.81250006
+      objectReference: {fileID: 0}
+    - target: {fileID: 863178509595466635, guid: 06d61907bf5104f4d8532f82861a77f2,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 863178509595466635, guid: 06d61907bf5104f4d8532f82861a77f2,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 863178509595466635, guid: 06d61907bf5104f4d8532f82861a77f2,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].inSlope
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 863178509595466635, guid: 06d61907bf5104f4d8532f82861a77f2,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 863178509595466635, guid: 06d61907bf5104f4d8532f82861a77f2,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].inWeight
+      value: 0.37083334
+      objectReference: {fileID: 0}
+    - target: {fileID: 863178509595466635, guid: 06d61907bf5104f4d8532f82861a77f2,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].outSlope
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 1999351661913644208, guid: 06d61907bf5104f4d8532f82861a77f2,
         type: 3}
       propertyPath: m_Name
