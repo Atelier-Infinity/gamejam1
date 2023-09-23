@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using PlayerInput = Generated.PlayerInput;
 
 public class PlayerController : MonoBehaviour, PlayerInput.IPlayerActions
 {
