@@ -6,39 +6,52 @@ using UnityEngine;
 public class LimbAttachment : MonoBehaviour
 {
     private AttachmentPoint _attachmentTarget;
+    public bool Attachment => _attachmentTarget != null;
 
     private float _attachmentStartTime;
 
     [Description("Time to travel from positon to being attached in seconds")]
     public float totalAttachmentTime = 1;
+
     public float accelerationRate = 2;
 
     public void Attach(AttachmentPoint attachmentTarget)
     {
+        if (attachmentTarget.IsAttached || attachmentTarget.IsTargeted)
+        {
+            Debug.Log($"${attachmentTarget} is already in use");
+            return;
+        }
+
         _attachmentTarget = attachmentTarget;
         _attachmentStartTime = Time.time;
+
+        _attachmentTarget.IsTargeted = true;
     }
 
     public void Detach()
     {
+        _attachmentTarget.IsAttached = false;
+        _attachmentTarget.IsTargeted = false;
         _attachmentTarget = null;
         transform.SetParent(null);
     }
 
     private void Update()
     {
-        if (!_attachmentTarget || transform.parent == _attachmentTarget.transform) return;
+        if (!_attachmentTarget || _attachmentTarget.IsAttached) return;
 
         var progress = math.pow(
             (Time.time - _attachmentStartTime) / totalAttachmentTime,
             accelerationRate
-            );
-        
+        );
+
         if (totalAttachmentTime <= (Time.time - _attachmentStartTime))
         {
             transform.SetParent(_attachmentTarget.transform);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
+            _attachmentTarget.IsAttached = true;
             return;
         }
 
@@ -55,6 +68,10 @@ public class LimbAttachment : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(1, 1, 1, .2f);
-        Gizmos.DrawSphere(transform.position, .6f);
+        var position = transform.position;
+        Gizmos.DrawSphere(position, .6f);
+
+        Gizmos.color = new Color(1, .4f, .8f);
+        if (_attachmentTarget) Gizmos.DrawLine(position, _attachmentTarget.transform.position);
     }
 }

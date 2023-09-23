@@ -1,8 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AttachmentPoint : MonoBehaviour
 {
+    public bool IsTargeted { get; set; }
+    public bool IsAttached { get; set; }
+    
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = new Color(1, 1, .4f, .8f);

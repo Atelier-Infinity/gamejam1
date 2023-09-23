@@ -416,12 +416,12 @@ GameObject:
   - component: {fileID: 972159404}
   - component: {fileID: 972159403}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Attachment Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &972159403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,7 +442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972159402}
   m_LocalRotation: {x: 0.41027027, y: 0.2933219, z: 0.09870678, w: 0.85784465}
-  m_LocalPosition: {x: -2.11, y: 2.6, z: 0.45}
+  m_LocalPosition: {x: -2.15, y: 2.25, z: 0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -584,6 +584,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855201255273579584, guid: b54ee44580828834598901089aa12ba1,
+        type: 3}
+      propertyPath: maxPhi
+      value: 24.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b54ee44580828834598901089aa12ba1, type: 3}
